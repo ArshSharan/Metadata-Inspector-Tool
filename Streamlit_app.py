@@ -185,9 +185,9 @@ if uploaded_file:
                 ["exiftool", tmp_path],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                text=True,
-                shell=True
+                text=True
             )
+
 
             if result.returncode != 0:
                 with stylable_container(
