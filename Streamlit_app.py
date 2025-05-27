@@ -6,7 +6,7 @@ import time
 from streamlit_extras.stylable_container import stylable_container
 
 st.set_page_config(
-    page_title="CYBERVERSE METADATA INSPECTOR",
+    page_title="d CYBERVERSE METADATA INSPECTOR",
     page_icon="🏷️",
     layout="centered",
     initial_sidebar_state="collapsed"
