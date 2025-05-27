@@ -1,4 +1,4 @@
-# Use official Python image
+# Use official Python image with slim Debian base
 FROM python:3.10-slim
 
 # Install system dependencies
@@ -11,13 +11,13 @@ RUN apt-get update && apt-get install -y \
     make \
     && rm -rf /var/lib/apt/lists/*
 
-# Manually install ExifTool from official source
-RUN wget https://exiftool.org/Image-ExifTool-12.70.tar.gz && \
-    tar -xzf Image-ExifTool-12.70.tar.gz && \
-    cd Image-ExifTool-12.70 && \
+# Manually install the latest ExifTool (always works)
+RUN wget https://exiftool.org/Image-ExifTool.tar.gz && \
+    tar -xzf Image-ExifTool.tar.gz && \
+    cd Image-ExifTool-* && \
     perl Makefile.PL && \
     make && make test && make install && \
-    cd .. && rm -rf Image-ExifTool-12.70* 
+    cd .. && rm -rf Image-ExifTool*
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
