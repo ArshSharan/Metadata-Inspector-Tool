@@ -17,6 +17,8 @@ WORKDIR /app
 
 # Copy requirements.txt and install Python dependencies
 COPY requirements.txt .
+# Copy the Streamlit config directory
+COPY .streamlit /app/.streamlit
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
